@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.*
 import android.widget.Toast
-import java.io.Serializable
+//import java.io.Serializable
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_registration.*
 import java.text.SimpleDateFormat
@@ -69,7 +69,7 @@ class RegistrationPage : AppCompatActivity() {
             }
         }
 
-        button_date_1!!.setOnClickListener(object : View.OnClickListener {
+        button_date_1.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
                 DatePickerDialog(this@RegistrationPage,
                     dateSetListener,
@@ -98,7 +98,7 @@ class RegistrationPage : AppCompatActivity() {
                 email.setError("Enter valid Email id !")
             }
            else if (!maleBtn.isChecked() and  !femaleBtn.isChecked()){
-                Toast.makeText(getApplicationContext(), "Please select a gender !",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Please select a gender !",Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             else {
@@ -118,7 +118,7 @@ class RegistrationPage : AppCompatActivity() {
     private fun updateDateInView() {
         val myFormat = "DD/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        date!!.text = sdf.format(cal.getTime())
+        date.text = sdf.format(cal.getTime())
     }
 
     private fun sendUserData(username: String, useremail: String,gender: String,date:String,time:String) {
@@ -129,29 +129,29 @@ class RegistrationPage : AppCompatActivity() {
         send.putExtra("email",useremail)
         send.putExtra("gender",gender)
         send.putExtra("time",time)
-        setResult(RESULT_OK, send);
-        finish();
+        setResult(RESULT_OK, send)
+        finish()
 
     }
 
 }
 
 
-class UserInfo : Serializable {
-    private lateinit var name: String
-    private lateinit var email: String
-    fun getName(): String? {
-        return name
-    }
-    @JvmName("setName1")
-    fun setName(name: String?) {
-        this.name = name!!
-    }
-    fun getEmail(): String? {
-        return email
-    }
-    @JvmName("setEmail1")
-    fun setEmail(email: String?) {
-        this.email= email!!
-    }
-}
+//class UserInfo : Serializable {
+//    private lateinit var name: String
+//    private lateinit var email: String
+//    fun getName(): String? {
+//        return name
+//    }
+//    @JvmName("setName1")
+//    fun setName(name: String?) {
+//        this.name = name!!
+//    }
+//    fun getEmail(): String? {
+//        return email
+//    }
+//    @JvmName("setEmail1")
+//    fun setEmail(email: String?) {
+//        this.email= email!!
+//    }
+//}

@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 val time = data?.getStringExtra("time").toString()
 
 
-                (list as ArrayList<ListData>).add(ListData(R.drawable.pictureOne,email,name,gender,time))
+                (list as ArrayList<ListData>).add(ListData(R.drawable.image2,email,name,gender,time))
 
                 val recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
                 val adapter = ListAdapter(list as ArrayList<ListData>)
@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         return when (id) {
             R.id.item1 -> {
 
+
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage("Are You sure to logout?")
                 builder.setCancelable(true)
@@ -77,12 +78,13 @@ class MainActivity : AppCompatActivity() {
                 builder.setNegativeButton(
                     "No"
                 ) { dialog, id -> dialog.cancel() }
-                val alert = builder.create()
-                alert.show()
+                val alert11 = builder.create()
+                alert11.show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 }
+
 

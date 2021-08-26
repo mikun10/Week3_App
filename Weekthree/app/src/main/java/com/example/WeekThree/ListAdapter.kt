@@ -31,9 +31,9 @@ class ListAdapter
 
         holder.deleteBtn.setOnClickListener { view ->
             val builder = AlertDialog.Builder(view.context)
-            builder.setMessage("Do you want to logout ?")
+            builder.setMessage("Do you want to delete?")
             builder.setCancelable(true)
-            builder.setNeutralButton("Yes") { dialogInterface, which ->
+            builder.setPositiveButton("Yes") { dialogInterface, which ->
 
 
                 listdata.removeAt(position)
@@ -51,11 +51,11 @@ class ListAdapter
         holder.imageView.setOnClickListener { view ->
 
                 val intent = Intent(view.context, ProfileActivity::class.java)
-            intent.putExtra("name",myListData.description);
-            intent.putExtra("image",myListData.imageId);
-            intent.putExtra("email",myListData.email);
-            intent.putExtra("gender",myListData.radioGroup);
-            intent.putExtra("time",myListData.time);
+            intent.putExtra("name",myListData.description)
+            intent.putExtra("image",myListData.imageId)
+            intent.putExtra("email",myListData.email)
+            intent.putExtra("gender",myListData.radioGroup)
+            intent.putExtra("time",myListData.time)
             intent.putExtra("pos",position)
              view.context.startActivity(intent)
 
@@ -80,7 +80,7 @@ class ListAdapter
 
 
         init {
-            deleteBtn = itemView.findViewById<View>(R.id.deleteButton) as Button
+            deleteBtn = itemView.findViewById<View>(R.id.deleteButton) as  Button
             imageView = itemView.findViewById<View>(R.id.profileBtn) as ImageView
             textView = itemView.findViewById<View>(R.id.nameDetail) as TextView
             textView1 = itemView.findViewById<View>(R.id.emailDetail) as TextView

@@ -17,6 +17,17 @@ android:padding="10dp"
 
         tools:ignore="MissingConstraints">
 
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="50dp"
+            android:text="Delete"
+            app:backgroundTint="#911515" />
         <ImageView
             android:id="@+id/profileBtn"
             android:layout_width="33dp"
@@ -26,7 +37,7 @@ android:padding="10dp"
             android:layout_alignParentTop="true"
             android:layout_marginStart="314dp"
             android:layout_marginLeft="314dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="#000000"

@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_profile.*
 class ProfileActivity : AppCompatActivity() {
 
     lateinit var homebtn: Button
-    lateinit var del: Button
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,29 +30,13 @@ class ProfileActivity : AppCompatActivity() {
 
 
         homebtn = findViewById(R.id.homeBtn)
-        del = findViewById(R.id.deleteButton)
         homebtn.setOnClickListener {
 
             val backIntent = Intent(this, MainActivity::class.java)
-            startActivity(backIntent)
+
+            finish()
         }
-        del.setOnClickListener {
-            val builder1 = AlertDialog.Builder(this)
-            builder1.setMessage("Are You sure to delete?")
-            builder1.setCancelable(true)
-            builder1.setPositiveButton(
 
-                "Yes",
-
-
-            ) { dialog, id -> dialog.cancel() }
-            builder1.setNegativeButton(
-                "No"
-            ) { dialog, id -> dialog.cancel() }
-            val alert11 = builder1.create()
-            alert11.show()
-            true
-        }
 
     }
 }
